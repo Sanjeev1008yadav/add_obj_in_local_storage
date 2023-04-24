@@ -101,14 +101,32 @@ function onSubmit(e){
             localStorage.removeItem(obj.emailInput)
             userList.removeChild(li);
 
-       
-       
+           
+           
+    //  const editButton = document.createElement('input')
+    //         editButton.type = "Button"
+    //         editButton.value = 'edit'
+    //         li.appendChild(editButton)        
        
        
        
         }
+    
+        const editButton = document.createElement('input')
+        editButton.type = "Button"
+        editButton.value = 'edit'
+        li.appendChild(editButton)        
+        editButton.onclick = () => {
+            localStorage.removeItem(obj.emailInput)
+            userList.removeChild(li);
+            document.getElementById('name').value = obj.nameInput
+            document.getElementById('email').value = obj.emailInput
 
+        }
 
+        li.appendChild(deleteButton)
+        li.appendChild(editButton)
+        userList.appendChild(li)
 
             
 
