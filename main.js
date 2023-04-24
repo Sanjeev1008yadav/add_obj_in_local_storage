@@ -64,6 +64,16 @@ function onSubmit(e){
         // localStorage.setItem('name' , nameInput.value);
         // localStorage.setItem('email', emailInput.value);
 
+        // const deleteButton = document.createElement('input')
+        // deleteButton.type = "Button"
+        // deleteButton.value = 'Delete'
+        // li.appendChild(deleteButton)
+        // deleteButton.onclick = () => {
+        //     localStorage.removeItem(obj.emailInput)
+            
+
+        
+        // }
         const obj = {
             
             nameInput:nameInput.value,
@@ -73,11 +83,37 @@ function onSubmit(e){
 
             
         }
-        localStorage.setItem( Math.random(), JSON.stringify(obj));
+        localStorage.setItem( obj.emailInput , JSON.stringify(obj));
+      
+      
         // clear fields
+        
+            
         nameInput.value = '';
         emailInput.value = '';
-    }
+    
+    const deleteButton = document.createElement('input')
+        deleteButton.type = "Button"
+        deleteButton.value = 'Delete'
+        li.appendChild(deleteButton)
+        // userList.appendChild(li)
+        deleteButton.onclick = () => {
+            localStorage.removeItem(obj.emailInput)
+            userList.removeChild(li);
+
+       
+       
+       
+       
+       
+        }
+
+
+
+            
+
+        
+        }
+
 
 }
-
